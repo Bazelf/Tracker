@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Groups</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container" id="formContainer">
+        <!-- First Input Group -->
+        <div class="form-group" id="group1">
+            <button type="button" class="delete-btn" onclick="deleteGroup('group1')">Delete</button>
+            <div class="editable-label" id="label1" contenteditable="true" onblur="setLabelFixed(1)">Number of Tasks</div>
+            <label for="numTasks1" style="display:none">Number of Tasks</label>
+            <input type="number" id="numTasks1" class="form-control" oninput="calculateTimePerTask(1)">
+            <label for="hoursWorked1">Hours worked</label>
+            <input type="number" id="hoursWorked1" class="form-control" oninput="calculateTimePerTask(1)">
+            <label for="timePerTask1">Run Rate (Minutes per Task)</label>
+            <input type="text" id="timePerTask1" class="form-control" readonly>
+        </div>
+
+        <!-- Second Input Group -->
+        <div class="form-group" id="group2">
+            <button type="button" class="delete-btn" onclick="deleteGroup('group2')">Delete</button>
+            <div class="editable-label" id="label2" contenteditable="true" onblur="setLabelFixed(2)">Number of Tasks</div>
+            <label for="numTasks2" style="display:none">Number of Tasks</label>
+            <input type="number" id="numTasks2" class="form-control" oninput="calculateTimePerTask(2)">
+            <label for="hoursWorked2">Hours worked</label>
+            <input type="number" id="hoursWorked2" class="form-control" oninput="calculateTimePerTask(2)">
+            <label for="timePerTask2">Run Rate (Minutes per Task)</label>
+            <input type="text" id="timePerTask2" class="form-control" readonly>
+        </div>
+    </div>
+
+    <!-- Add new group button -->
+    <button class="add-group-btn" onclick="addNewGroup()">+</button>
+    <script src="scripts.js"></script>
+</body>
+</html>
